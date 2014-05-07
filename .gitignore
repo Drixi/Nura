@@ -213,3 +213,16 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Gradle
+#############
+local.properties
+
+#############
+## Other
+#############
+.idea
+*.iml
+out/
+.gradle/
