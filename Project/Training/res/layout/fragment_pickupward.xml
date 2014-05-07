@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@color/NuraBG">
+	    
+    <ScrollView
+		android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+		<TextView
+		    android:id="@+id/wardText"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="30dp"
+		    android:text="Choose your ward"
+		    android:textSize="32sp" />
+
+		<Button
+		    android:id="@+id/btgastro"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="60dp"
+		    android:text="Gastro"
+		    android:textSize="32sp" />
+
+		<Button
+		    android:id="@+id/btstomach"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="Stomach"
+		    android:textSize="32sp" />
+		
+		<Button
+		    android:id="@+id/btchildren"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="Children"
+		    android:textSize="32sp" />
+		<Button
+		    android:id="@+id/btpsy"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="psychiatric"
+		    android:textSize="32sp" />
+		
+		<Button
+		    android:id="@+id/btenm"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="Ear, nose and mouth"
+		    android:textSize="32sp" />
+		
+		<Button
+		    android:id="@+id/bttrauma"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="Trauma"
+		    android:textSize="32sp" />
+		
+			</LinearLayout>
+    	</LinearLayout>
+	</ScrollView>
+    
+</LinearLayout>

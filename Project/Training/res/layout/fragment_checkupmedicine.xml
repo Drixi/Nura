@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+    
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/NuraBG"
+    android:orientation="vertical" >
+    
+    	<Space android:id="@+id/medidummy" 
+	        android:layout_width="0dp" 
+	        android:layout_height="0dp"
+	        android:layout_centerHorizontal="true" 
+	        android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/tvScanBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/medidummy"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:text="Or Search: "
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/tvMedicineBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/medidummy"
+            android:layout_marginRight="50dp"
+            android:layout_below="@+id/tvScanBar"
+            android:layout_marginTop="80dp"
+            android:text="Back"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/tvSearchBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/medidummy"
+            android:ems="10"
+            android:hint="Medicine ID:"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/tvScanMedicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvScanBar"
+            android:layout_centerHorizontal="true"
+            android:text="Scan Medicine"
+            android:textSize="80dp" />
+
+        <TextView
+            android:id="@+id/tvMedicineNEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tvMedicineBack"
+            android:layout_toRightOf="@+id/medidummy"
+            android:layout_marginLeft="50dp"
+            android:text="Next"
+            android:textSize="30dp" />
+
+</RelativeLayout>

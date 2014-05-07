@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/NuraBG"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btPatientList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btDeliver"
+        android:layout_marginLeft="50dp"
+        android:layout_centerVertical="true"
+        android:drawableTop="@drawable/mypatientslogo"
+        android:background="@color/NuraBG" />
+
+    <Button
+        android:id="@+id/btPickup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btDeliver"
+        android:layout_marginRight="50dp"
+        android:layout_centerVertical="true"
+        android:drawableTop="@drawable/dispenselogo"
+        android:background="@color/NuraBG" />
+
+    <Button
+        android:id="@+id/btDeliver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:drawableTop="@drawable/administratelogo"
+        android:background="@color/NuraBG" />
+
+</RelativeLayout>
