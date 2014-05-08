@@ -31,9 +31,12 @@ public class MainActivity extends FragmentActivity {
   	public static String hejmeddig = "Hej med dig";
   	static String[] seperated;
   	static String[][] matrix;
-  	
-  
-	@Override
+
+    @Override
+    public void onBackPressed() {
+    }
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
@@ -53,7 +56,7 @@ public class MainActivity extends FragmentActivity {
 		handleIntent(getIntent());
 	}
 	
-		  private void handleIntent(Intent intent) {
+	private void handleIntent(Intent intent) {
 		  String action = intent.getAction();
 		  if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
 		       
@@ -83,7 +86,8 @@ public class MainActivity extends FragmentActivity {
 		
 		  }
 		}
-		public class NdefReaderTask extends AsyncTask<Tag, Void, String> {
+		
+	public class NdefReaderTask extends AsyncTask<Tag, Void, String> {
 			 
 		  @Override
 		  protected String doInBackground(Tag... params) {
@@ -135,17 +139,16 @@ public class MainActivity extends FragmentActivity {
 		    	  ReadResult = result;
 		      }
 		  }
-		}
-
-		public static String NFCRead(){
+	}
+	public static String NFCRead(){
 			return ReadResult;
-		}
+	}
 		
-		public static String[] getPatientList(){
+	public static String[] getPatientList(){
 			PickUpWardFragment pickup = new PickUpWardFragment();
 			seperated = pickup.patientdb();
 			return seperated;
-		}
+	}
 		
 	
 }

@@ -23,6 +23,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +46,7 @@ public class LoginActivity extends Activity {
     ProgressDialog dialog = null;
     static String[] separated;
     ArrayList<String> list = new ArrayList<String>();
+    SharedPreferences SM;
     
 	
     @Override
@@ -54,7 +57,7 @@ public class LoginActivity extends Activity {
         loginBT = (Button)findViewById(R.id.btLogin);
         etUserID = (EditText)findViewById(R.id.etUserName);
         etPIN = (EditText)findViewById(R.id.etPassword);
-        
+    
         loginBT.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -73,7 +76,12 @@ public class LoginActivity extends Activity {
 	                         String pinString = etPIN.getText().toString();
 	                         int pinInteger = Integer.valueOf(pinString);
 	                         int responseInteger = Integer.valueOf(separated[2]);
+	    	                 SM = getSharedPreferences("userrecord", 0);
+	    	                 Boolean islogin = SM.getBoolean("userlogin", false);
 	                         if(responseInteger == pinInteger){
+	                        	 Editor edit = SM.edit();
+	                             edit.putBoolean("userlogin", true);
+	                             edit.commit();
 	                             runOnUiThread(new Runnable() {
 	                                 public void run() {
 	                                     Toast.makeText(LoginActivity.this,"Login Success", Toast.LENGTH_SHORT).show();
@@ -91,6 +99,9 @@ public class LoginActivity extends Activity {
 		});    
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,7 +110,6 @@ public class LoginActivity extends Activity {
         return true;
     }
     
-
     public void logindb(){
                  try{
                      

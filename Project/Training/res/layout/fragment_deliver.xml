@@ -2,95 +2,113 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/NuraBG"
-    android:gravity="center_horizontal"
-    android:orientation="vertical" >
+    android:background="@color/NuraBG">
 
-    <TextView
-        android:id="@+id/tvScanPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan Patient"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50dp" />
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etPatient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:inputType="number" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical">
 
-        <requestFocus />
-    </EditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btGetPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Patient" />
+            <TextView
+                android:id="@+id/tvScanPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan Patient"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="50dp" />
 
-    <TextView
-        android:id="@+id/tvPatientID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Patient ID"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="30dp" />
+            <EditText
+                android:id="@+id/etPatient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number" >
 
-    <TextView
-        android:id="@+id/tvScanCanister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan Canister"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50dp" />
+                <requestFocus />
+            </EditText>
 
-    <EditText
-        android:id="@+id/etCanister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:inputType="number" />
+            <Button
+                android:id="@+id/btGetPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Patient" />
 
-    <Button
-        android:id="@+id/btGetCanister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Canister" />
+            <TextView
+                android:id="@+id/tvPatientID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient ID"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="30dp" />
 
-    <TextView
-        android:id="@+id/tvCanisterID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Canister ID"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="30dp" />
+            <TextView
+                android:id="@+id/tvScanCanister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan Canister"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="50dp" />
 
-    <TextView
-        android:id="@+id/tvDelivered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Medicine has been delivered!"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50dp" />
+            <EditText
+                android:id="@+id/etCanister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number" />
 
-    <Button
-        android:id="@+id/btNextPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:height="70dp"
-        android:text="Next Patient"
-        android:width="500dp" />
+            <Button
+                android:id="@+id/btGetCanister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Canister" />
 
-    <Button
-        android:id="@+id/btBackToMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:height="70dp"
-        android:text="Back to main menu"
-        android:width="500dp" />
+            <TextView
+                android:id="@+id/tvCanisterID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Canister ID"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/tvDelivered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicine has been delivered!"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="50dp" />
+
+            <Button
+                android:id="@+id/btNextPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:height="70dp"
+                android:text="Next Patient"
+                android:width="500dp" />
+
+            <Button
+                android:id="@+id/btBackToMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:height="70dp"
+                android:text="Back to main menu"
+                android:width="500dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

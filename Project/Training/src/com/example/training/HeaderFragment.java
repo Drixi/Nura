@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Region;
 import android.os.Bundle;
 import android.os.Handler;
@@ -56,19 +58,23 @@ public class HeaderFragment extends Fragment {
         // set current date into textview
         date.setText(new StringBuilder()
         // Month is 0 based, therefore we add 1
-                .append(dd).append(" ").append("- ").append(mm + 1).append(" - ")
-                .append(yy));
+        .append(dd).append(" ").append("- ").append(mm + 1).append(" - ")
+        .append(yy));
         
         // Log Out Button
-		        logout.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
 					
-					@Override
-					public void onClick(View v) {
-						DownloadImage DownloadImage = new DownloadImage();
-						DownloadImage.rundownload();
-						
-					}
-				});
+		@Override
+		public void onClick(View v) {
+				SharedPreferences SM = getActivity().getSharedPreferences("userrecord", 0);
+	            Editor edit = SM.edit();
+	            edit.putBoolean("userlogin", false);
+	            edit.commit();
+	            
+	            startActivity(new Intent(getActivity(), LoginActivity.class));  
+			}
+		});
+        
 		// Check Up Button
 		        check_up.setOnClickListener(new View.OnClickListener() {
 					

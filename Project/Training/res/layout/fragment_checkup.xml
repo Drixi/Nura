@@ -5,53 +5,31 @@
     android:layout_height="match_parent"
     android:background="@color/NuraBG">
 
-	<LinearLayout
-    	    android:layout_width="wrap_content"
-        	android:layout_height="match_parent"
-        	android:orientation="vertical"
-        	android:layout_alignParentLeft="true">
-
-		<Button
-		    android:id="@+id/checkup_canister"
-		    android:layout_width="296dp"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="1"
-		    android:text="Scan/Search Canister"
-		    android:textSize="25dp" 
-			android:drawableTop="@drawable/canisters"/>
-
-	</LinearLayout>
-
-    <LinearLayout
-	    android:layout_width="wrap_content"
-	    android:layout_height="match_parent"
-	    android:orientation="vertical" 
-	    android:layout_centerInParent="true"
-		android:layout_weight="1" >
-
-        <Button
-            android:id="@+id/checkup_patient"
-            android:layout_width="296dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Scan/Search Patient"
-            android:textSize="25dp" 
-            android:drawableTop="@drawable/patient"/>
-        
-
-</LinearLayout>
+    <Button
+        android:id="@+id/btcheckup_medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="100dp"
+        android:layout_toLeftOf="@+id/btcheckup_canister"
+        android:background="@drawable/scansearchmedicine"/>
 
     <Button
-        android:id="@+id/checkup_medicine"
-        android:layout_width="296dp"
+        android:id="@+id/btcheckup_canister"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_weight="1"
-        android:text="Scan/Search Medicine"
-        android:textSize="25dp" 
-        android:drawableTop="@drawable/medicine"/>
+        android:layout_centerInParent="true"
+        android:background="@drawable/scansearchcanister"/>
+    <Button
+        android:id="@+id/btcheckup_patient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="100dp"
+        android:layout_toRightOf="@id/btcheckup_canister"
+        android:background="@drawable/scansearchpatient"/>
+
+
 
 </RelativeLayout>
 

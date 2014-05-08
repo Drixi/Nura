@@ -6,45 +6,26 @@
     android:baselineAligned="true"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btNext_PickUpPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+    <Space android:id="@+id/pickuppatientdummy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="62dp"
-        android:text="Next"
-        android:textSize="30dp" 
-        android:background="@drawable/button"/>
-
-    <TextView
-        android:id="@+id/tvScanCup_PickUpPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Scan Cup"
-        android:textSize="30dp" />
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/tvID_PickUpPatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/tvPatient_PickUpPatient"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="93dp"
-        android:text="ID:    "
+        android:layout_toLeftOf="@+id/pickuppatientdummy"
+        android:layout_marginTop="30dp"
+        android:text="ID: "
         android:textSize="30dp" />
 
     <TextView
         android:id="@+id/tvPatient_PickUpPatient"
-        android:layout_width="145dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="45dp"
+        android:layout_toLeftOf="@+id/pickuppatientdummy"
         android:text="Patient: "
         android:textSize="30dp" />
 
@@ -52,10 +33,8 @@
         android:id="@+id/tvCupID_PickUpPatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/btNext_PickUpPatient"
-        android:layout_below="@+id/tvScanCup_PickUpPatient"
-        android:layout_marginRight="34dp"
-        android:layout_marginTop="36dp"
+        android:layout_toLeftOf="@+id/pickuppatientdummy"
+        android:layout_centerVertical="true"
         android:text="Cup ID:"
         android:textSize="30dp" />
 
@@ -63,14 +42,28 @@
         android:id="@+id/ETCupID_PickUpPatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btNext_PickUpPatient"
-        android:layout_alignTop="@+id/tvCupID_PickUpPatient"
-        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@+id/pickuppatientdummy"
+        android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="number" 
-        android:hint="ENTER CUP ID">
+        android:hint="ENTER CUP ID"
+        android:inputType="number" />
 
-        <requestFocus />
-    </EditText>
+    <TextView
+        android:id="@+id/tvScanCup_PickUpPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="Scan Cup"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btNext_PickUpPatient"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/next"
+        android:textSize="30dp" />
     
 </RelativeLayout>
