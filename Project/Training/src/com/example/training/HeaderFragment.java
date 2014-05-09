@@ -21,23 +21,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HeaderFragment extends Fragment {
-	
-	LoginActivity LoginActivity = new LoginActivity();
-	String[] separated;
-	static String titleInfo;
-	TextView user_name, user_id, date;
-	Button logout, check_up, gotomain;
-	ImageView profile_img;
-	private CheckUpFragment buttonCheckUp;
-	private MenuFragment buttonMenu;
-	
-	
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_header_layout, container, false);
-		separated = LoginActivity.GetValue();
-		
+
+    LoginActivity LoginActivity = new LoginActivity();
+    String[] separated;
+    static String titleInfo;
+    TextView user_name, user_id, date;
+    Button logout, check_up, gotomain;
+    ImageView profile_img;
+    private CheckUpFragment buttonCheckUp;
+    private MenuFragment buttonMenu;
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_header_layout, container, false);
+        separated = LoginActivity.GetValue();
+
         user_name = (TextView)rootView.findViewById(R.id.user_name);
         user_id = (TextView)rootView.findViewById(R.id.user_id);
         gotomain = (Button)rootView.findViewById(R.id.gotomain);
@@ -45,7 +45,7 @@ public class HeaderFragment extends Fragment {
         logout = (Button)rootView.findViewById(R.id.logout);
         check_up = (Button)rootView.findViewById(R.id.check_up);
         profile_img = (ImageView)rootView.findViewById(R.id.profile_img);
-        
+
 //        title.setText(titleName);
         user_name.setText("Sygeplejer : " + separated[3]);
         user_id.setText("ID : " + separated[1]);
@@ -57,50 +57,50 @@ public class HeaderFragment extends Fragment {
 
         // set current date into textview
         date.setText(new StringBuilder()
-        // Month is 0 based, therefore we add 1
-        .append(dd).append(" ").append("- ").append(mm + 1).append(" - ")
-        .append(yy));
-        
+                // Month is 0 based, therefore we add 1
+                .append(dd).append(" ").append("- ").append(mm + 1).append(" - ")
+                .append(yy));
+
         // Log Out Button
         logout.setOnClickListener(new View.OnClickListener() {
-					
-		@Override
-		public void onClick(View v) {
-				SharedPreferences SM = getActivity().getSharedPreferences("userrecord", 0);
-	            Editor edit = SM.edit();
-	            edit.putBoolean("userlogin", false);
-	            edit.commit();
-	            
-	            startActivity(new Intent(getActivity(), LoginActivity.class));  
-			}
-		});
-        
-		// Check Up Button
-		        check_up.setOnClickListener(new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-						buttonCheckUp = new CheckUpFragment();
-						FragmentTransaction ft = getFragmentManager().beginTransaction();
-						ft.replace(R.id.content_wrapper, buttonCheckUp).commit();
-					}
-				});
-		// Go To Main Button
-		        gotomain.setOnClickListener(new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-						buttonMenu = new MenuFragment();
-						FragmentTransaction ft = getFragmentManager().beginTransaction();
-						ft.add(R.id.content_wrapper, buttonMenu).commit();
-					}
-				});
-        
-		return rootView;
-	}
-	
+
+            @Override
+            public void onClick(View v) {
+                SharedPreferences SM = getActivity().getSharedPreferences("userrecord", 0);
+                Editor edit = SM.edit();
+                edit.putBoolean("userlogin", false);
+                edit.commit();
+
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+        });
+
+        // Check Up Button
+        check_up.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                buttonCheckUp = new CheckUpFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_wrapper, buttonCheckUp).commit();
+            }
+        });
+        // Go To Main Button
+        gotomain.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                buttonMenu = new MenuFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.add(R.id.content_wrapper, buttonMenu).commit();
+            }
+        });
+
+        return rootView;
+    }
+
 //	public static String changeTitle(){
 //		return titleInfo;
 //	}
-	
+
 }

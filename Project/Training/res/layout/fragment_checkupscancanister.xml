@@ -4,59 +4,59 @@
     android:layout_height="match_parent"
     android:background="@color/NuraBG"
     android:orientation="vertical" >
-    
-        <Space android:id="@+id/canidummy" 
-	        android:layout_width="0dp" 
-	        android:layout_height="0dp"
-	        android:layout_centerHorizontal="true" 
-	        android:visibility="invisible"/>
 
-        <EditText
-            android:id="@+id/tvSearchBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/canidummy"
-            android:ems="10"
-            android:hint="Canister ID:"
-            android:inputType="number" />
+    <Space android:id="@+id/canidummy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 
-        <TextView
-            android:id="@+id/tvScanCanister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/tvScanCanisterBar"
-            android:layout_centerHorizontal="true"
-            android:text="Scan Canister"
-            android:textSize="80dp" />
+    <EditText
+        android:id="@+id/tvSearchBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/canidummy"
+        android:ems="10"
+        android:hint="Canister ID:"
+        android:inputType="number" />
 
-        <TextView
-            android:id="@+id/tvScanCanisterBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/canidummy"
-            android:layout_centerVertical="true"
-            android:text="Or Search: "
-            android:textSize="40dp" />
+    <TextView
+        android:id="@+id/tvScanCanister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvScanCanisterBar"
+        android:layout_centerHorizontal="true"
+        android:text="Scan Canister"
+        android:textSize="80dp" />
 
-        <Button
-            android:id="@+id/btCanisterBack"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_alignRight="@+id/canidummy"
-            android:layout_below="@+id/tvScanCanisterBar"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/next" />
+    <TextView
+        android:id="@+id/tvScanCanisterBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/canidummy"
+        android:layout_centerVertical="true"
+        android:text="Or Search: "
+        android:textSize="40dp" />
 
-        <Button
-            android:id="@+id/btNEXTCanister"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_alignBaseline="@+id/btCanisterBack"
-            android:layout_alignBottom="@+id/btCanisterBack"
-            android:layout_alignLeft="@+id/canidummy"
-            android:layout_marginLeft="50dp"
-            android:background="@drawable/next" />
+    <Button
+        android:id="@+id/btCanisterBack"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@+id/canidummy"
+        android:layout_below="@+id/tvScanCanisterBar"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/next" />
+
+    <Button
+        android:id="@+id/btNEXTCanister"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/btCanisterBack"
+        android:layout_alignBottom="@+id/btCanisterBack"
+        android:layout_alignLeft="@+id/canidummy"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/next" />
 
 </RelativeLayout>

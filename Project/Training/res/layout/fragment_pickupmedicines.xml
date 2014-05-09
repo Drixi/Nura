@@ -61,7 +61,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Batch nr.: [211459]"
                 android:textSize="25dp" />
-            
+
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
@@ -84,15 +84,15 @@
         </LinearLayout>
 
         <ImageView
-       	android:id="@+id/profile_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:src="@drawable/profile"
-        android:paddingTop="50dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="80dp"
-        android:paddingRight="80dp"
-        android:layout_weight="1"/>
+            android:id="@+id/profile_img"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/profile"
+            android:paddingTop="50dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </LinearLayout>
