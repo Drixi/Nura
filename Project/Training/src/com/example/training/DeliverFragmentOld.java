@@ -50,6 +50,7 @@ public class DeliverFragmentOld extends Fragment{
     HttpClient httpclient;
     List<NameValuePair> nameValuePairs;
     static String[] separated;
+    static String separatedremove;
     ArrayList<String> list = new ArrayList<String>();
 	
 		@Override
@@ -68,71 +69,128 @@ public class DeliverFragmentOld extends Fragment{
 			btGetCanister = (Button)rootView.findViewById(R.id.btGetCanister);
 			etPatient = (EditText)rootView.findViewById(R.id.etPatient);
 			etCanister = (EditText)rootView.findViewById(R.id.etCanister);
+			reloadAll();
 			
+	        btGetPatient.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+		                 new Thread(new Runnable() {
+		                        public void run() {
+		                            getDatabaseInfo();
+		                        }
+		                 }).start();
+		                 
+		                 new Handler().postDelayed(new Runnable() {
+		                     @Override
+		                     public void run() {
+		                         int patientInt = Integer.valueOf(etPatient.getText().toString());
+		                         int separatedInt = Integer.valueOf(separated[3]);
+		                         if(patientInt == separatedInt){
+		                        	 tvPatientID.setVisibility(View.VISIBLE);
+		                        	 tvPatientID.setText("Patient ID : "+ separatedInt);
+		                        	 tvCanisterID.setVisibility(View.VISIBLE);
+		                        	 etCanister.setVisibility(View.VISIBLE);
+		                        	 btGetCanister.setVisibility(View.VISIBLE);
+		                         }
+		                         else{
+		                             //tvScanPatient.setText("Wrong user ID please scan again");                
+		                         }
+		                     }
+		                 }, 2000);
+				}
+			});
+			
+	        btGetCanister.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+		                 new Thread(new Runnable() {
+		                        public void run() {
+		                            removeCanister();
+		                        }
+		                 }).start();
+		                 
+		                 new Handler().postDelayed(new Runnable() {
+		                     @Override
+		                     public void run() {
+				                 if(separatedremove != null){
+				 						tvDelivered.setVisibility(View.VISIBLE);
+				 						btNextPatient.setVisibility(View.VISIBLE);
+				                 	}
+
+		                     }
+		                 }, 2000);
+		                 
+
+				}
+			});
+	        
+	        btNextPatient.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					reloadAll();
+				}
+			});
+	        
+			return rootView;
+		}
+		
+
+	    public void getDatabaseInfo(){
+            try{
+                
+                httpclient=new DefaultHttpClient();
+                httppost= new HttpPost("http://188.226.221.153/readfromdbdeliverpatient.php");
+                nameValuePairs = new ArrayList<NameValuePair>(1);
+                nameValuePairs.add(new BasicNameValuePair("id",etPatient.getText().toString().trim()));
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                ResponseHandler<String> responseHandler = new BasicResponseHandler();
+                response = httpclient.execute(httppost, responseHandler);
+                
+                Log.d("drixi", response);
+                separated = response.split("#");
+                for (int i = 0; i < separated.length; ++i) {
+                    list.add(separated[i]);}
+            }catch(IOException e){
+           	Log.e("drixi", "FEJLET");
+
+            }
+       
+	    }
+	    
+	    public void removeCanister(){
+            try{
+                
+                httpclient=new DefaultHttpClient();
+                httppost= new HttpPost("http://188.226.221.153/readfromdbremovecanister.php");
+                nameValuePairs = new ArrayList<NameValuePair>(1);
+                nameValuePairs.add(new BasicNameValuePair("id",etCanister.getText().toString().trim()));
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                ResponseHandler<String> responseHandler = new BasicResponseHandler();
+                response = httpclient.execute(httppost, responseHandler);
+                System.out.println(response);
+                separatedremove = response;
+            }catch(IOException e){
+           	Log.e("drixi", "FEJLET");
+
+            }
+       
+	    }
+	    
+	    public void reloadAll(){
 			tvPatientID.setVisibility(View.INVISIBLE);
 			tvScanCanister.setVisibility(View.INVISIBLE);
 			tvCanisterID.setVisibility(View.INVISIBLE);
 			tvDelivered.setVisibility(View.INVISIBLE);
 			btGetCanister.setVisibility(View.INVISIBLE);
 			etCanister.setVisibility(View.INVISIBLE);
-			
-//	        btGetPatient.setOnClickListener(new View.OnClickListener() {
-//				
-//				@Override
-//				public void onClick(View v) {
-//		                 new Thread(new Runnable() {
-//		                        public void run() {
-//		                            getDatabaseInfo();
-//		                        }
-//		                 }).start();
-//		                 new Handler().postDelayed(new Runnable() {
-//		                     @Override
-//		                     public void run() {
-//		                         String patientString = etPatient.getText().toString();
-//		                         if(responseInteger == pinInteger){
-//		                             runOnUiThread(new Runnable() {
-//		                                 public void run() {
-//		                                     Toast.makeText(LoginActivity.this,"Login Success", Toast.LENGTH_SHORT).show();
-//		                                 }
-//		                             });
-//		                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//		                             finish();   
-//		                         }
-//		                         else{
-//		                             showAlert();                
-//		                         }
-//		                     }
-//		                 }, 2500);
-//				}
-//			});
-			
-			return rootView;
-		}
-		
-//	    public void getDatabaseInfo(){
-//            try{
-//                
-//                httpclient=new DefaultHttpClient();
-//                httppost= new HttpPost("http://188.226.221.153/readfromdbdeliverpatient.php");
-//                nameValuePairs = new ArrayList<NameValuePair>(1);
-//                nameValuePairs.add(new BasicNameValuePair("id",etUserID.getText().toString().trim()));
-//                //nameValuePairs.add(new BasicNameValuePair("pin",etPIN.getText().toString().trim()));
-//                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-//                //response=httpclient.execute(httppost);
-//                ResponseHandler<String> responseHandler = new BasicResponseHandler();
-//                response = httpclient.execute(httppost, responseHandler);
-//                
-//                Log.d("drixi", response);
-//                separated = response.split("#");
-//                for (int i = 0; i < separated.length; ++i) {
-//                    list.add(separated[i]);}
-//
-//
-//            }catch(IOException e){
-//           	Log.e("drixi", "FEJLET");
-//
-//            }
-//       
-//	}
+			btNextPatient.setVisibility(View.INVISIBLE);
+			btBackToMenu.setVisibility(View.INVISIBLE);
+			tvScanPatient.setText("Scan Patient");
+			etPatient.setText("");
+			etCanister.setText("");
+	    }
 
 }

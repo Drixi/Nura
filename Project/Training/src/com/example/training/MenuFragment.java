@@ -27,8 +27,6 @@ public class MenuFragment extends Fragment {
 		btDeliver = (Button)rootView.findViewById(R.id.btDeliver);
 		btPatientList = (Button)rootView.findViewById(R.id.btPatientList);
 		btPickup = (Button)rootView.findViewById(R.id.btPickup);
-		//HeaderFragment.titleName = String;
-		
 		
 	// Administer Button
 		btDeliver.setOnClickListener(new View.OnClickListener() {

@@ -39,26 +39,24 @@
             android:text="Or Search: "
             android:textSize="40dp" />
 
-        <TextView
-            android:id="@+id/tvCanisterBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btCanisterBack"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
             android:layout_alignRight="@+id/canidummy"
             android:layout_below="@+id/tvScanCanisterBar"
             android:layout_marginRight="50dp"
-            android:layout_marginTop="80dp"
-            android:text="Back"
-            android:textSize="30dp" />
+            android:layout_marginTop="40dp"
+            android:background="@drawable/next" />
 
-        <TextView
-            android:id="@+id/tvNEXTCanister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tvCanisterBack"
-            android:layout_alignBottom="@+id/tvCanisterBack"
+        <Button
+            android:id="@+id/btNEXTCanister"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/btCanisterBack"
+            android:layout_alignBottom="@+id/btCanisterBack"
             android:layout_alignLeft="@+id/canidummy"
             android:layout_marginLeft="50dp"
-            android:text="Next"
-            android:textSize="30dp" />
+            android:background="@drawable/next" />
 
 </RelativeLayout>

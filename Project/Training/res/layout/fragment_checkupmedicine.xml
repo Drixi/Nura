@@ -22,16 +22,15 @@
             android:text="Or Search: "
             android:textSize="40dp" />
 
-        <TextView
-            android:id="@+id/tvMedicineBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btMedicineBack"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
             android:layout_toLeftOf="@+id/medidummy"
             android:layout_marginRight="50dp"
             android:layout_below="@+id/tvScanBar"
-            android:layout_marginTop="80dp"
-            android:text="Back"
-            android:textSize="30dp" />
+            android:layout_marginTop="40dp"
+            android:background="@drawable/next" />
 
         <EditText
             android:id="@+id/tvSearchBar"
@@ -55,14 +54,13 @@
             android:text="Scan Medicine"
             android:textSize="80dp" />
 
-        <TextView
-            android:id="@+id/tvMedicineNEXT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tvMedicineBack"
+        <Button
+            android:id="@+id/btMedicineNEXT"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/btMedicineBack"
             android:layout_toRightOf="@+id/medidummy"
             android:layout_marginLeft="50dp"
-            android:text="Next"
-            android:textSize="30dp" />
+            android:background="@drawable/next" />
 
 </RelativeLayout>
