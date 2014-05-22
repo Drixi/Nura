@@ -30,6 +30,6 @@ public class CheckUpMedicineFragment extends Fragment {
             }
         });
 
-    return rootView;
+        return rootView;
     }
 }

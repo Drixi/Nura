@@ -5,9 +5,9 @@
     android:background="#00FFFF"
     android:orientation="horizontal"
     android:baselineAligned="false">
-    <ScrollView        
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_weight="1"    
+        android:layout_weight="1"
         android:layout_height="match_parent"
         android:background="#FFFFFFFF">
         <LinearLayout
@@ -24,11 +24,11 @@
                 android:background="#FFDDDDFF"/>
         </LinearLayout>
     </ScrollView>
-    <View 
+    <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:background="#FF000000"/>
-    <ScrollView 
+    <ScrollView
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"

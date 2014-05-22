@@ -102,39 +102,39 @@ import android.widget.ImageView;
 
 public class DownloadImage {
 
-	HeaderFragment HeaderFragment = new HeaderFragment();
-	
-	public void getimage() {
-		
-		try {
-	        URL url = new URL("http://188.226.221.153/nurses/3.jpg");
-	        HttpGet httpRequest = null;
+    HeaderFragment HeaderFragment = new HeaderFragment();
 
-	        httpRequest = new HttpGet(url.toURI());
+    public void getimage() {
 
-	        HttpClient httpclient = new DefaultHttpClient();
-	        HttpResponse response = (HttpResponse) httpclient
-	                .execute(httpRequest);
+        try {
+            URL url = new URL("http://188.226.221.153/nurses/3.jpg");
+            HttpGet httpRequest = null;
 
-	        HttpEntity entity = response.getEntity();
-	        BufferedHttpEntity b_entity = new BufferedHttpEntity(entity);
-	        InputStream input = b_entity.getContent();
+            httpRequest = new HttpGet(url.toURI());
 
-	        Bitmap bitmap = BitmapFactory.decodeStream(input);
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = (HttpResponse) httpclient
+                    .execute(httpRequest);
 
-	        HeaderFragment.profile_img.setImageBitmap(bitmap);
+            HttpEntity entity = response.getEntity();
+            BufferedHttpEntity b_entity = new BufferedHttpEntity(entity);
+            InputStream input = b_entity.getContent();
 
-	    } catch (Exception ex) {
+            Bitmap bitmap = BitmapFactory.decodeStream(input);
 
-	    }
-	}
-	
-	public void rundownload(){
+            HeaderFragment.profile_img.setImageBitmap(bitmap);
+
+        } catch (Exception ex) {
+
+        }
+    }
+
+    public void rundownload(){
         new Thread(new Runnable() {
             public void run() {
                 getimage();
             }
-     }).start();
-	}
+        }).start();
+    }
 
 }

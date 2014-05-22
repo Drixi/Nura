@@ -26,7 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PickUpWardFragment extends Fragment{
-	
+
     static HttpPost httppost;
     StringBuffer buffer;
     static String response;
@@ -36,60 +36,60 @@ public class PickUpWardFragment extends Fragment{
     static String[] separated;
     static String[][] matrix;
     ArrayList<String> list = new ArrayList<String>();
-	Button btGastro;
-	private PickUpWardpatientsFragment buttonWard;
-    
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_pickupward, container, false);
-			btGastro = (Button)rootView.findViewById(R.id.btgastro);
-			
-	        btGastro.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-		                 new Thread(new Runnable() {
-		                        public void run() {
-		                            patientdb();
-		                        }
-		                 }).start();
-		                 new Handler().postDelayed(new Runnable() {
-		                     @Override
-		                     public void run() {
-		                    	MainActivity MainActivity = new MainActivity();
-		                    	MainActivity.matrix = matrix;
-		                    	//btGastro.setText(matrix[1][1]);
-		         				buttonWard = new PickUpWardpatientsFragment();
-		        				FragmentTransaction ft = getFragmentManager().beginTransaction();
-		        				ft.replace(R.id.content_wrapper, buttonWard).commit();
-		                     }
-		                 }, 1500);
-				}
-			});
-			
-			return rootView;
-		}
-		
-	    public static String[] patientdb(){
-            try{
-                
-                httpclient=new DefaultHttpClient();
-                httppost= new HttpPost("http://188.226.221.153/readfromdbpatientlist.php");
-                ResponseHandler<String> responseHandler = new BasicResponseHandler();
-                response = httpclient.execute(httppost, responseHandler);
-                
-                separated = response.split("@");
-                matrix = new String[response.length()][];
-                for(int i=0; i<separated.length; i++){
-                	 matrix[i] = separated[i].split("#");
-                }
-                
-                return separated;
+    Button btGastro;
+    private PickUpWardpatientsFragment buttonWard;
 
-            }catch(Exception e){
-            	return separated;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_pickupward, container, false);
+        btGastro = (Button)rootView.findViewById(R.id.btgastro);
+
+        btGastro.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    public void run() {
+                        patientdb();
+                    }
+                }).start();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        MainActivity MainActivity = new MainActivity();
+                        MainActivity.matrix = matrix;
+                        //btGastro.setText(matrix[1][1]);
+                        buttonWard = new PickUpWardpatientsFragment();
+                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.content_wrapper, buttonWard).commit();
+                    }
+                }, 1500);
             }
-       
-}
+        });
+
+        return rootView;
+    }
+
+    public static String[] patientdb(){
+        try{
+
+            httpclient=new DefaultHttpClient();
+            httppost= new HttpPost("http://188.226.221.153/readfromdbpatientlist.php");
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            response = httpclient.execute(httppost, responseHandler);
+
+            separated = response.split("@");
+            matrix = new String[response.length()][];
+            for(int i=0; i<separated.length; i++){
+                matrix[i] = separated[i].split("#");
+            }
+
+            return separated;
+
+        }catch(Exception e){
+            return separated;
+        }
+
+    }
 }

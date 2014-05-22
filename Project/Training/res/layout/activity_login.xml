@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:src="@drawable/nuralogo2" />
-    
+
     <EditText
         android:id="@+id/etUserName"
         android:layout_width="wrap_content"
@@ -41,12 +41,12 @@
         android:maxLines="1"
         android:singleLine="true" />
 
-	<Button
-	    android:id="@+id/btLogin"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/etPassword"
-	    android:layout_below="@+id/etUserName"
-	    android:text="Login" />
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_below="@+id/etUserName"
+        android:text="Login" />
 
 </RelativeLayout>
